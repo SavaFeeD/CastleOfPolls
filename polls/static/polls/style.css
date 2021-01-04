@@ -1,0 +1,78 @@
+li {
+    list-style: none;
+}
+ul{
+    padding: 0;
+}
+.quests_wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 90%;
+}
+.quests_wrap .wrap-q{
+    max-width: 660px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.quests_wrap li{
+    max-width: 300px;
+    width: 300px;
+    height: 70px;
+    background: #6f42c1;
+    margin: 15px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+}
+.quests_wrap li a{
+    color: white;
+    width: 100%!important;
+    max-width: 100% !important;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.quests_wrap li:nth-child(1n+1){
+    background: #ff6d69;
+}
+.quests_wrap li:nth-child(2n+2){
+    background: #fecc50;
+}
+.quests_wrap li:nth-child(3n+3){
+    background: #0be7fb;
+}
+.quests_wrap li:nth-child(4n+4){
+    background: #d9bfb5;
+}
+.quests_wrap li:nth-child(5n+5){
+    background: #c7aabc;
+}
+.quests_wrap li:nth-child(6n+6){
+    background: #b33a3a;
+}
+.quests_wrap li:nth-child(7n+7){
+    background: #fa448c;
+}
+.quests_wrap li:nth-child(8n+8){
+    background: #d57056;
+}
+.quests_wrap li:nth-child(9n+9){
+    background: #8479a1;
+}
+
+
+div.wrap_auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+form.auth{
+    width: 100%;
+    max-width: 400px;
+    background: linear-gradient(#38305a, #2d0a40);
+}

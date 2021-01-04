@@ -1,0 +1,31 @@
+{% load static %}
+
+{% include "head.html" %}
+
+<h1 class="d-flex justify-content-center mb-4">Опросы:</h1>
+
+{% if request.user.is_authenticated %}
+
+    {% if latest_question_list %}
+        <div class="quests_wrap">
+            <ul class="wrap-q">
+                {% for question in latest_question_list %}
+
+                    <li>
+                        <a href="{%url 'polls:detail' question.id %}">
+                            {{ question.question_text }}
+                            <p>{{ question.question_short_description }}</p>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+
+{% else %}
+
+    <h3>Пожалуйста авторизируйтесь</h3>
+
+{% endif %}

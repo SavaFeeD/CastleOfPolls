@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/bootstrap.min.css' %}">
+    <link rel="shortcut icon" href="{% static 'polls/images/pizza.png' %}" type="image/png">
+    <meta charset="UTF-8">
+    <title>Castle of Polls</title>
+</head>
+
+<nav class="nav nav-pills flex-column flex-sm-row">
+    <a class="flex-sm-fill text-sm-center nav-link col-1" href="{% url 'polls:index' %}">Главная</a>
+    <a class="flex-sm-fill text-sm-center nav-link col-1" href="{% url 'accounts:signup' %}">Регистрация</a>
+
+    <div class="col-8"></div>
+
+    <div class="flex-sm-fill text-sm-center nav-link col-2">
+        {% if user.is_authenticated %}
+            <li>{{ user.get_username }}</li>
+            <li><a class="nav-link" href="{% url 'logout' %}?next={{request.path}}">Выйти</a></li>
+        {% else %}
+            <li><a class="nav-link" href="{% url 'login' %}?next={{request.path}}">Авторизация</a></li>
+        {% endif %}
+    </div>
+</nav>
